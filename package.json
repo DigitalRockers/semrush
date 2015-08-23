@@ -1,0 +1,36 @@
+{
+  "name": "semrush",
+  "description": "Semrush api nodejs module",
+  "version": "0.1.0",
+  "keywords": [
+    "semrush",
+    "api"
+  ],
+  "bugs": {
+    "url": "https://github.com/DigitalRockers/semrush/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Gianluca Pengo",
+    "url": "https://github.com/gian788/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DigitalRockers/semrush"
+  },  
+  "engines": {
+    "node": ">=0.10"
+  },
+  "dependencies": {
+    "eyes": "~0.1.8",
+    "request": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "main": "./index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  }
+}
