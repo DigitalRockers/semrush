@@ -1,5 +1,5 @@
 {
-  "name": "semrush",
+  "name": "semrush-api",
   "description": "Semrush api nodejs module",
   "version": "0.1.0",
   "keywords": [
