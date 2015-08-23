@@ -10,6 +10,7 @@ var Semrush = function(options){
 		options = {};
 
 	this.apiKey = options.apiKey || process.env.SemrushApiKey;
+	this.database = options.database;
 
 	if(options.debug){
 		this.debug = true;
@@ -45,47 +46,82 @@ Semrush.prototype.__baseCall = function(apiUrl, type, options, defaults, callbac
 	});
 };
 
-/**
- * Call Domain Organic API Action 
- *
- * @param options 	Object 			api options
- * @param callback 	function 		callback function called with two parameters err, result
- */
-Semrush.prototype.getDomainOrganic = function(options, callback){
-	this.__baseCall('http://api.semrush.com/', 'domain_organic', options, callback);
+
+
+var methods = {
+	//Overview Reports
+	domain_ranks: null,
+	domain_rank: null,
+	domain_rank_history: null ,
+	rank_difference: null,
+	rank: null,
+
+	//Domain Reports
+	domain_organic: null,
+	domain_adwords: null,
+	domain_adwords_unique: null,
+	domain_organic_organic: null,
+	domain_adwords_adwords: null,
+	domain_adwords_historical: null,
+	domain_domains: null,
+	domain_shopping: null,
+	domain_shopping_unique: null,
+	domain_shopping_shopping: null,
+
+	//Keywords Reports
+	phrase_all: null,
+	phrase_this: null,
+	phrase_organic: null,
+	pharse_adwords: null,
+	phrase_related: null,
+	pharse_adwords_historical: null,
+	phrase_fullsearch: null,
+	phrase_kdi: null,
+
+	//URL reports
+	url_organic: null,
+	url_adwords: null,
+
+	//Display Advertising Reports
+	publisher_text_ads: {action: 'report', export: 'api'},
+	publisher_advertiser: {action: 'report', export: 'api'},
+	publihser_publihsers: {action: 'report', export: 'api'},
+	advertiser_publisher: {action: 'report', export: 'api'},
+	advertiser_text_ads: {action: 'report', export: 'api'},
+	advertiser_landings: {action: 'report', export: 'api'},
+	advertiser_publisher_text_ads: {action: 'report', export: 'api'},
+	advertiser_rank: {action: 'report', export: 'api'},
+	publihser_rank: {action: 'report', export: 'api'},
+
+	//Backlinks
+	backlinks_overview: null,
+	backlinks: null,
+	backlinks_refdomains: null,
+	backlinks_refips: null,
+	backlinks_tld: null,
+	backlinks_geo: null,
+	backlinks_anchors: null,
+	backlinks_pages: null
 };
 
-
-/**
- * Call Domain Adwords API Action 
- *
- * @param options 	Object 			api options
- * @param callback 	function 		callback function called with two parameters err, result
- */
-Semrush.prototype.getDomainAdwords = function(options, callback){
-	this.__baseCall('http://api.semrush.com/', 'domain_adwords', options, callback);
+var methodName = function(name){
+	var newName = name.split('_');
+	for(var i = 1; i < newName.length; i++)
+		newName[i] = newName[i][0].toUpperCase() + newName[i].substr(1);
+	return newName.join('');
 };
 
-/**
- * Call Advertiser Rank API Action 
- *
- * @param options 	Object 			api options
- * @param callback 	function 		callback function called with two parameters err, result
- */
-Semrush.prototype.getAdvertiserRank = function(options, callback){
-	this.__baseCall('http://api.asns.backend.semrush.com/', 'advertiser_rank', options, {action: 'report', export: 'api'}, callback);
-};
-
-/**
- * Call Backlinks Overview API Action 
- *
- * @param options 	Object 			api options
- * @param callback 	function 		callback function called with two parameters err, result
- */
-Semrush.prototype.getBacklinksOverview = function(options, callback){
-	this.__baseCall('http://api.semrush.com/analytics/v1/', 'backlinks_overview', options, callback);
-};
-
+for(var i in methods){
+	if(methods[i]){
+		Semrush.prototype[methodName(i)] = function(options, callback){			
+			this.__baseCall(baseApiUrl, i, options, methods[i], callback);
+		};
+	} else {
+		Semrush.prototype[methodName(i)] = function(options, callback){			
+			this.__baseCall(baseApiUrl, i, options, callback);
+		};
+	}
+}
 
 
 /**  Debug  **/

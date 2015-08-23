@@ -1,8 +1,9 @@
 #Semrush
-[![Build Status via Travis CI](https://travis-ci.org/DigitalRockers/semrush.svg?branch=master)](https://travis-ci.org/DigitalRockers/semrush)
 [![NPM version](http://img.shields.io/npm/v/semrush.svg)](https://www.npmjs.org/package/semrush)
 
 [SEMrush](semrush.com) api module for [nodejs](nodejs.org)
+
+This module expose every API endpoint with a method named with camel cased api `type`.
 
 SEMrush API documentation: [http://semrush.com/api-documentation](http://semrush.com/api-documentation)
 
@@ -29,90 +30,18 @@ package.json
 var Semrush = require('semrush');
 
 var sem = new Semrush({
-	apiKey: 'YOUR_CONSUMER_KEY'
-});
-
-sem.getDomainOrganic({
-	domain: 'www.yahoo.com',
-	database: 'us'
-	}, function(error, results){
-		if(error) return console.error(error);
-		...
-	});
-```
-
-## Documentation
-Initialize SEMrush object:
-
-```javascript
-var Semrush = require('semrush');
-var sem = new Ritetag({
 	apiKey: 'YOUR_API_KEY' || process.env.SemrushApiKey,
 	debug: false //optional
 });
-```
 
-### getDomainOrganic(options, callback)
-This report lists keywords that bring users to a domain via Google's top 20 organic search results.
-See [Domain Organic Search Keywords documentation](http://it.semrush.com/it/api-analytics/#domain_organic) for options field specification (type and key already specified).
-
-
-```javascript
-sem.getDomainOrganic({
+sem.domainOrganic({
 	domain: 'www.yahoo.com',
 	database: 'us'
 	}, function(error, results){
 		if(error) return console.error(error);
-
 		...
 	});
 ```
-
-### getDomainAdwords(options, callback)
-This report lists keywords that bring users to a domain via Google's paid search results.
-See [Domain Paid Search Keywords documentation](http://it.semrush.com/it/api-analytics/#domain_adwords) for options field specification (type and key already specified).
-
-```javascript
-sem.getDomainAdwords({
-	domain: 'www.yahoo.com',
-	database: 'us'
-	}, function(error, results){
-		if(error) return console.error(error);
-
-		...
-	});
-```
-### getAdvertiserRank(options, callback)
-This report lists advertisers ranked by the total number of display ads noticed by SEMrush.
-See [Advertiser Rank documentation](http://it.semrush.com/it/api-analytics/#advertiser_rank) for options field specification (type and key already specified).
-
- ```javascript
-sem.getAdvertiserRank({
-	domain: 'www.yahoo.com',
-	database: 'us'
-	}, function(error, results){
-		if(error) return console.error(error);
-
-		...
-	});
-```
-
-### getBacklinksOverview(options, callback)
-This report provides a summary of backlinks, including their type, referring domains and IP addresses for a domain, root domain, or URL.
-See [Advertiser Rank documentation](http://it.semrush.com/it/api-analytics/#backlinks_overview) for options field specification (type and key already specified).
-
-```javascript
-sem.getBacklinksOverview({
-	domain: 'www.yahoo.com',
-	database: 'us'
-	}, function(error, results){
-		if(error) return console.error(error);
-
-		...
-	});
-```
-
-
 
 
 

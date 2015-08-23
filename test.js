@@ -8,7 +8,7 @@ var Sh = new Semrush();
 
 describe('Semrush unit tests', function() {
 	it('getDomainOrganic', function(done) {
-		Sh.getDomainOrganic({
+		Sh.domainOrganic({
 			domain: 'www.yahoo.com',
 			database: 'us'
 			}, function(err, res){
@@ -21,7 +21,7 @@ describe('Semrush unit tests', function() {
 	});
 
 	it('getDomainAdwords', function(done) {
-		Sh.getDomainAdwords({
+		Sh.domainAdwords({
 			domain: 'www.yahoo.com',
 			database: 'us'
 			}, function(err, res){
@@ -34,7 +34,7 @@ describe('Semrush unit tests', function() {
 	});
 
 	it('getAdvertiserRank', function(done) {
-		Sh.getAdvertiserRank({
+		Sh.advertiserRank({
 			domain: 'www.yahoo.com',
 			database: 'us'
 			}, function(err, res){
@@ -47,7 +47,7 @@ describe('Semrush unit tests', function() {
 	});
 
 	it('getBacklinksOverview', function(done) {
-		Sh.getBacklinksOverview({
+		Sh.backlinksOverview({
 			domain: 'www.yahoo.com',
 			database: 'us'
 			}, function(err, res){
