@@ -3,6 +3,7 @@ var eyes = require('eyes');
 var request = require('request');
 var _ = require('lodash');
 
+var baseApiUrl = 'http://api.semrush.com/';
 
 
 var Semrush = function(options){

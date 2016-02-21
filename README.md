@@ -1,5 +1,5 @@
 #Semrush
-[![NPM version](http://img.shields.io/npm/v/semrush.svg)](https://www.npmjs.org/package/semrush)
+[![NPM version](http://img.shields.io/npm/v/semrush-api.svg)](https://www.npmjs.org/package/semrush-api)
 
 [SEMrush](semrush.com) api module for [nodejs](nodejs.org)
 
