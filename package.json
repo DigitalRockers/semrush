@@ -1,7 +1,7 @@
 {
   "name": "semrush-api",
   "description": "Semrush api nodejs module",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "keywords": [
     "semrush",
     "api"
@@ -17,7 +17,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/DigitalRockers/semrush"
-  },  
+  },
   "engines": {
     "node": ">=0.10"
   },
