@@ -43,6 +43,68 @@ sem.domainOrganic({
 	});
 ```
 
+## Available endpoints
+
+All Semrush endpoints are exposed with camel case named methods:
+
+Eg. `domain_organic` is `domainOrganic(params, callback)`.
+
+The mandatory parameter like `type` are hardcoded.
+
+#### Overview Reports
+* domain_ranks
+* domain_rank
+* domain_rank_history
+* rank_difference
+* rank: rank
+
+#### Domain Reports
+* domain_organic
+* domain_adwords
+* domain_adwords_unique
+* domain_organic_organic
+* domain_adwords_adwords
+* domain_adwords_historical
+* domain_domains_ 
+* domain_shopping
+* domain_shopping_unique
+* domain_shopping_shopping
+
+#### Keywords Reports
+* phrase_all
+* phrase_this
+* phrase_organic
+* pharse_adwords
+* phrase_related
+* pharse_adwords_historical
+* phrase_fullsearch
+* phrase_kdi
+
+#### URL reports
+* url_organic
+* url_adwords
+
+### Display Advertising Reports
+* publisher_text_ads
+* publisher_advertiser
+* publihser_publihsers
+* advertiser_publisher
+* advertiser_text_ads
+* advertiser_landings
+* advertiser_publisher_text_ads
+* advertiser_rank
+* publihser_rank
+
+#### Backlinks
+* backlinks_overview
+* backlinks
+* backlinks_refdomains
+* backlinks_refips
+* backlinks_tld
+* backlinks_geo
+* backlinks_anchors
+* backlinks_pages
+
 
 
 LICENSE
