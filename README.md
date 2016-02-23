@@ -56,7 +56,7 @@ The mandatory parameter like `type` are hardcoded.
 * domain_rank
 * domain_rank_history
 * rank_difference
-* rank: rank
+* rank
 
 #### Domain Reports
 * domain_organic
@@ -65,7 +65,7 @@ The mandatory parameter like `type` are hardcoded.
 * domain_organic_organic
 * domain_adwords_adwords
 * domain_adwords_historical
-* domain_domains 
+* domain_domains
 * domain_shopping
 * domain_shopping_unique
 * domain_shopping_shopping
