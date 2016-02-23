@@ -65,7 +65,7 @@ The mandatory parameter like `type` are hardcoded.
 * domain_organic_organic
 * domain_adwords_adwords
 * domain_adwords_historical
-* domain_domains_ 
+* domain_domains 
 * domain_shopping
 * domain_shopping_unique
 * domain_shopping_shopping
