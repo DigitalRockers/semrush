@@ -13,7 +13,7 @@ This software is released under the MIT license. See `LICENSE` for more details
 
 From the command line
 
-	$ npm install semrush
+	$ npm install semrush-api
 
 package.json
 
@@ -27,7 +27,7 @@ package.json
 ## Example use
 
 ```javascript
-var Semrush = require('semrush');
+var Semrush = require('semrush-api');
 
 var sem = new Semrush({
 	apiKey: 'YOUR_API_KEY' || process.env.SemrushApiKey,
