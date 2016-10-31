@@ -6,7 +6,8 @@ var _ = require('lodash');
 var baseApiUrl = 'http://api.semrush.com/';
 var advApiUrl = 'http://api.asns.backend.semrush.com/';
 var backlinksApiUrl = 'http://api.semrush.com/analytics/v1/';
-
+var accountsApiUnitsUrl = 'http://www.semrush.com/users/countapiunits.html?key=';
+var logsApiUrl = 'http://logs.backend.semrush.com/';
 
 var Semrush = function(options){
 	if(!options)
@@ -198,6 +199,19 @@ var methods = {
 	},
 	backlinks_pages: {
 		apiUrl: backlinksApiUrl,
+	},
+
+	//Check API Units Balance
+	countapiunits: {
+		apiUrl: accountsApiUnitsUrl,
+	},
+
+	//Logs
+	queries_api: {
+		apiUrl: logsApiUrl,
+	},
+	queries_export: {
+		apiUrl: logsApiUrl,
 	}
 };
 
