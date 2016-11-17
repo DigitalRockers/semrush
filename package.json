@@ -1,7 +1,7 @@
 {
   "name": "semrush-api",
   "description": "Semrush api nodejs module",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "keywords": [
     "semrush",
     "api"
